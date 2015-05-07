@@ -12,6 +12,7 @@ hadoop jar /home/gaojiaxiang/hadoop/contrib/streaming/hadoop-streaming-2.6.0.jar
 	-input seq/input \
 	-output seq/output \
 	-mapper 'cat' \
+	-reducer './max' \
 > ../data/exec_time
 
 hadoop fs -get seq/output ../data/

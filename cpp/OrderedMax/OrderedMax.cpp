@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
 	string line;
 
 	vector<pair<int,int> > maxkv;
-	int prev;
-	int max;
+	int prev = -1;
+	int max = -1;
 	int isNew = 1;
 
 	while(getline(cin, line)) {
