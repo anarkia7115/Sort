@@ -2,7 +2,6 @@
 
 hadoop fs -rm -r seq/output
 
-time \
 hadoop jar /home/gaojiaxiang/hadoop/contrib/streaming/hadoop-streaming-2.6.0.jar \
 	-D stream.num.map.output.key.fields=3 \
 	-D mapred.text.key.partitioner.options=-k1,2 \
@@ -13,6 +12,5 @@ hadoop jar /home/gaojiaxiang/hadoop/contrib/streaming/hadoop-streaming-2.6.0.jar
 	-output seq/output \
 	-mapper 'cat' \
 	-reducer './max' \
-> ../data/exec_time
 
 hadoop fs -get seq/output ../data/
